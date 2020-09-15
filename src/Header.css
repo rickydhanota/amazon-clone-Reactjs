@@ -36,3 +36,16 @@
     height: 22px !important;
     background-color: #ffbd69;
 }
+
+.header__option{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+}
+
+.header__nav{
+    display: flex;
+    justify-content: space-evenly;
+}
