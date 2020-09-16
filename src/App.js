@@ -8,9 +8,13 @@ from 'react-router-dom';
 
 function App() {
   return (
+    
     <Router>
       <div className="app">
+
         <Header />
+        {/* The main navbar, and because this will be the same navbar on every page we put this outside of the switch */}
+
           <Switch>
 
             <Route path = "/checkout">
@@ -18,10 +22,12 @@ function App() {
             </Route>
 
             <Route path = "/">
+              {/* Make sure the home link '/' is the last one, and also this is where we direct to the different and various components/pages */}
               <Home />
             </Route>
 
           </Switch>
+
       </div>
     </Router>
   );
