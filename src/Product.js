@@ -4,11 +4,11 @@ import { useStateValue } from './StateProvider';
 
 
 function Product({id, title, image, price, rating }) {
-    const [{ basket }, dispath] = useStateValue();
+    const [{ basket }, dispatch] = useStateValue();
 
     console.log("this is the basket >>>>>>", basket);
     const addToBasket = () => {
-        dispath({
+        dispatch({
             type: 'ADD_TO_BASKET',
             item: {
                 id: id,
