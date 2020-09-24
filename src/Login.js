@@ -6,6 +6,14 @@ function Login() {
 
     const[email, setEmail] = useState('');
     const[password, setPassword] = useState('');
+    const signIn = e => {
+        e.preventDefault();
+
+    }
+    const register = e =>{
+        e.preventDefault();
+        
+    }
 
     return (
         <div className = "login">
@@ -21,14 +29,14 @@ function Login() {
                     <h5>Password</h5>
                     <input type="password" value = {password} onChange = {e => setPassword(e.target.value)}></input>
 
-                    <button className = "login__signInButton">Sign In</button>
+                    <button onClick = {signIn} type = 'submit' className = "login__signInButton">Sign In</button>
                 </form>
 
                 <p>
                     By signing-in you agree to THE FAKE AMAZON CLONE MADE BY RICKY DHANOTA Conditions of Use & Sale. Please see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
                 </p>
 
-                <button className = "login__registerButton">Create your FAKE AMAZON Account</button>
+                <button onClick = {register} className = "login__registerButton">Create your FAKE AMAZON Account</button>
             </div>
 
         </div>
