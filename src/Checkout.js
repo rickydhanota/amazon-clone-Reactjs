@@ -15,6 +15,7 @@ function Checkout() {
 
                 <div>
                     <h3>Hello, {user?.email}</h3>
+                    {/* The stupid question mark for optional chaining here is extremely import, it wont work without it ughh */}
                     <h2 className = "checkout__title">Your Shopping Basket</h2>
                     {basket.map(item =>(
                         <CheckoutProduct 
