@@ -53,6 +53,11 @@ function App() {
               <Checkout />
             </Route>
 
+            <Route path = "/payment">
+              <Header />
+              <Checkout />
+            </Route>
+
             <Route path = "/">
               {/* Make sure the home link '/' is the last one, and also this is where we direct to the different and various components/pages */}
               <Header />
