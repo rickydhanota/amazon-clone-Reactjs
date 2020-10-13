@@ -5,6 +5,8 @@ import { useStateValue } from './StateProvider';
 import { Link, useHistory } from 'react-router-dom';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { Card } from '@material-ui/core';
+import CurrencyFormat from 'react-currency-format';
+import { getBasketTotal } from './reducer';
 
 function Payment() {
     const [{ basket, user }, dispatch] = useStateValue();
@@ -71,7 +73,20 @@ function Payment() {
                     <div className = "payment__details">
                         <form onSubmit = {handleSubmit}>
                             <CardElement onChange = {handleChange}/>
-                            <div className = "payment__priceContainer"></div>
+                            <div className = "payment__priceContainer">
+                                <CurrencyFormat 
+                                renderText = {(value) => (
+                                    <>
+                                    <h3>Order Total: {value}</h3>
+                                    </>
+                                )}
+                                decimalScale = {2}
+                                value = {getBasketTotal(basket)}
+                                displayType ={"text"}
+                                thousandSeparator = {true}
+                                prefix = {"$"}
+                                /> 
+                            </div>
                         </form>
                     </div>
                 </div>
