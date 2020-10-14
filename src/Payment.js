@@ -12,9 +12,11 @@ function Payment() {
     const [{ basket, user }, dispatch] = useStateValue();
     const stripe = useStripe();
     const elements = useElements;
+    const [succeeded, setSucceeded] = useState(false)
+    const [processing, setProcessing] = useState("")
 
     const[error, setError] = useState(null)
-    const[disbaled, setDisabled] = useState(true)
+    const[disabled, setDisabled] = useState(true)
 
     const handleChange = event => {
         //Listen for card changes in the CardElement
@@ -86,6 +88,9 @@ function Payment() {
                                 thousandSeparator = {true}
                                 prefix = {"$"}
                                 /> 
+                                <button disabled = {processing || disabled || succeeded}>
+                                    <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
+                                </button>
                             </div>
                         </form>
                     </div>
